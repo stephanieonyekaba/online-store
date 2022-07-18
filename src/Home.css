@@ -1,0 +1,8 @@
+.home_image{
+    width: 100%;
+    z-index: -1; 
+    margin-bottom: -150px;
+    mask-image: linear-gradient(to top, transparent 25%, black 75%);
+
+
+}

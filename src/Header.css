@@ -41,5 +41,16 @@
     margin-left: 10px;
     margin-right: 10px;
     color: white;
+    font-size: 15px;
 }
 
+.header__optionBasket {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: 10px;
+}
+.header__basketCount {
+    margin-left: 10px;
+    margin-right: 10px;
+}
