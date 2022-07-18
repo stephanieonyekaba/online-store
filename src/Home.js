@@ -11,7 +11,8 @@ function Home() {
        <h1 className='home_image_text'>Beauty Starts Here </h1>
 
     <div className="home__row">
-    <Product />
+    <Product company='Fenty Beauty by Rihanna' title='Gloss Bomb Universal Lip Luminize' price= {19.99} image="https://i.ibb.co/9ZCqdHK/Screen-Shot-2022-07-18-at-1-48-35-AM.png"
+    rating={5}/>
     <Product />
       {/* product */}
     </div>

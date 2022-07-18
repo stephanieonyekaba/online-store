@@ -21,6 +21,7 @@
 .product__info{
     height: 100px;
     margin-bottom: 15px;
+
 }
 
 .product > button {
@@ -31,4 +32,12 @@
     background-color: rgba(255, 0, 0, 0.916);
     color: white;
 
+}
+
+.product__rating {
+    display: flex;
+   flex-direction: row;
+   padding-top: 5px;
+   font-size: 12px
+    ;
 }
