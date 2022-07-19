@@ -12,7 +12,7 @@
     background-color: white;
 }
 .product > img {
-    max-height: 300px;
+    max-height: 200px;
     width: 100%;
     object-fit: contain;
     margin-bottom: 15px;
@@ -25,12 +25,13 @@
 }
 
 .product > button {
-   font-size: 20px;
+ 
    font-family: Arial, Helvetica, sans-serif;
-    border: solid  rgba(255, 255, 255, 0.916) 1px;
-    border-radius: 12px;
-    background-color: rgba(255, 0, 0, 0.916);
+    border: solid  white 1px;
+    border-radius: none;
+    background-color: rgba(0, 0, 0, 0.916);
     color: white;
+    text-decoration: none;
 
 }
 
@@ -41,3 +42,5 @@
    font-size: 12px
     ;
 }
+
+
