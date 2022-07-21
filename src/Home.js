@@ -100,7 +100,8 @@ id="11"
     image="https://i.ibb.co/w70pR8V/Screen-Shot-2022-07-19-at-2-38-54-PM.png "
     rating={5}/>
 
-    </div>
+
+
     
 
 
@@ -113,17 +114,35 @@ id="11"
 
 
 
+</div>
 
+<div className="home__row">
+
+<Banner 
+  image="https://i.ibb.co/5jZjmQ6/Screen-Shot-2022-07-21-at-6-28-57-PM.png"
+  />
+
+
+  <Banner 
+      image=" https://i.ibb.co/gF24yz7/Screen-Shot-2022-07-21-at-6-29-33-PM.png"
+      />
+
+      </div>
     </div>
     <Footer 
       id='22'
-      image="https://i.ibb.co/HnvkWFX/Screen-Shot-2022-07-21-at-5-18-46-PM.png"
+      image="https://i.ibb.co/tZTTMP4/gradienta-gw-E9v-XSi7-Xw-unsplash.jpg "
       />
+
+<h1 className='footer_image_text'> #BRAND BEAUTY 
+       </h1>
     </div>
   )
 }
 
 export default Home
+
+
 
 
 
