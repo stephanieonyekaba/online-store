@@ -2,6 +2,8 @@ import React from 'react'
 import './Home.css'
 import Product from './Product'
 import Banner from './Banner'
+import Footer from './Footer'
+
 function Home() {
   return (
     <div className='home'>
@@ -9,7 +11,8 @@ function Home() {
       <img className='home_image' 
       src="https://i.ibb.co/Vw33VSk/igor-rand-3-J4-Hyv-V9bw-Y-unsplash-2.jpg " 
    />
-       <h1 className='home_image_text'>Beauty Starts Here </h1>
+       <h1 className='home_image_text'>Beauty Starts Here 
+       </h1>
 
    
 
@@ -96,6 +99,8 @@ id="11"
     price= {29.99} 
     image="https://i.ibb.co/w70pR8V/Screen-Shot-2022-07-19-at-2-38-54-PM.png "
     rating={5}/>
+
+    </div>
     
 
 
@@ -105,16 +110,16 @@ id="11"
 
 
 
-    </div>
-
-
-    </div>
 
 
 
 
     </div>
-  
+    <Footer 
+      id='22'
+      image="https://i.ibb.co/HnvkWFX/Screen-Shot-2022-07-21-at-5-18-46-PM.png"
+      />
+    </div>
   )
 }
 

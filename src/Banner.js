@@ -27,10 +27,3 @@ export default Banner
 
 
 
-
-{/* <a href="https://ibb.co/T0ckFsk"><img src="      " alt="ashley-piszek-UIEQFKM3y50-unsplash" border="0"></a>
-<a href="https://ibb.co/SQR5MP2"><img src="       " alt="ashley-piszek-3i-Sp-G-NHs-Ls-unsplash" border="0"></a>
-<a href="https://ibb.co/g7mcLxC"><img src="   
-
-
-   " alt="ashley-piszek-2avq-IBH252-Y-unsplash" border="0"></a> */}
