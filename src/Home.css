@@ -17,9 +17,10 @@
 .home_image{
     width: 100%;
     z-index: -1; 
-    margin-bottom: -150px;
+    margin-bottom: -10px;
     mask-image: linear-gradient(to top, transparent 50%, black 75%);
     padding-bottom: 100px;
+
 }
 
 
