@@ -19,7 +19,7 @@ function Product({company, title, price, image, rating}) {
         </div>
         </div>
         <img src={image} alt="" />
-        <button><span class="txt">Add to Bag</span></button>
+        <button><span class="txt">ADD TO BAG</span></button>
       
     </div>
   )
