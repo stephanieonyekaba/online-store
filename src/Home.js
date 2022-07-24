@@ -23,7 +23,6 @@ function Home() {
 <div className="home__row">
 
 <Banner 
-id="11"
   description="MULTI-BRAND"
   title="Buy one, get one free minis"
   image="https://i.ibb.co/n1rb5Fb/ashley-piszek-UIEQFKM3y50-unsplash.jpg"
@@ -31,7 +30,6 @@ id="11"
 
 
 <Banner 
-id="11"
   description="MATRIX"
   title="Up to 50% off jumbos
   "
@@ -81,7 +79,7 @@ id="11"
     {/* THIS IS OUR 3RD ROW */}
     <div className="home__row">
     <Product 
-    id="3"
+    id="4"
     company='Josie Maran'
     title='Argan Moonstone Glow Highlighting Stick' 
     price= {32.99} 
@@ -89,7 +87,7 @@ id="11"
     rating={3}/>
 
 <Product 
-    id="3"
+    id="5"
     company='MAKE UP FOR EVER'
     title='HD Skin Undetectable Longwear Foundation' 
     price= {55.00} 
@@ -97,7 +95,7 @@ id="11"
     rating={5}/>
 
 <Product 
-    id="3"
+    id="6"
     company='Charlotte Tilbury'
     title='Eyes To Mesmerize Cream Eyeshadow' 
     price= {29.99} 
