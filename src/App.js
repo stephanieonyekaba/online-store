@@ -2,6 +2,9 @@ import './App.css';
 import Header from './Header.js';
 import Home from './Home';
 import Checkout from './Checkout';
+import Login from './Login';
+import Footer from './Footer'; 
+
 import {
   BrowserRouter,
   Routes,
@@ -22,6 +25,7 @@ function App() {
         <>
           <Header/>
           <Home/> 
+          <Footer />
         </>
       }/>
 
@@ -29,6 +33,16 @@ function App() {
         <>
           <Header/>
           <Checkout />
+          <Footer />
+        </>
+      }/>
+
+
+      <Route exact path="/login" element={
+        <>
+        <Login />
+        <Footer />
+ 
         </>
       }/>
 
