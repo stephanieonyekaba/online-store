@@ -1,5 +1,6 @@
 export const initialState = {
-    basket: [],    
+    basket: [],   
+    user: null 
 }; 
     //selector 
     export const getBasketTotal = (basket) => 
@@ -18,7 +19,6 @@ export const initialState = {
 
 
             case 'REMOVE_FROM_BASKET':
-                console.log("REMOVE_BASKET")
             //here we are creating a bariable called index an dusing the JS fidnIndex 
             //function to search our basket array and see if any of the index we find 
             //have the same id as the id we passed in (action.id)
@@ -48,6 +48,12 @@ export const initialState = {
                 ...state, 
                 basket: newBasket
             }
+
+            case 'SET_USER':
+                return {
+                    ...state,
+                    user: action.user
+                }
 
             default:
                 return state 

@@ -18,20 +18,55 @@
     width: 100%;
     z-index: -1; 
     margin-bottom: -10px;
-    mask-image: linear-gradient(to top, transparent 50%, black 75%);
-    padding-bottom: 100px;
+    padding-bottom: 250px;
 
 }
-
+.home__container_H1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: sticky;
+    top: 50px;
+    z-index: 100;
+    background-color: white;
+}
 
 
 .home_image_text{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 200%);
-    font-size: 70px;
-    color: rgba(167, 0, 131, 0.273);
-    font-family:Raleway, Georgia, 'Times New Roman', Times, serif
+    transform: translate(-70%, -10%);
+    font-size: 150px;
+    color: white;
+    font-family:'Raleway', sans-serif;
+    font-weight: 100;
+    font-style: italic;
+
     
 }
+
+.home_image_text_h5 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.home_image_text_h5 > h5 {
+    padding-bottom: 20px;
+}
+
+
+
+.home_image_text_h5_button {
+    width: 200px;
+    background-color: black;
+    color: white;
+
+}
+

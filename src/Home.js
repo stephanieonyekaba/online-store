@@ -3,19 +3,24 @@ import './Home.css'
 import Product from './Product'
 import Banner from './Banner'
 import Footer from './Footer'
-// import InstagramIcon from '@mui/icons-material/Instagram';
-// import TwitterIcon from '@mui/icons-material/Twitter';
-// import FacebookIcon from '@mui/icons-material/Facebook';
-// import YouTubeIcon from '@mui/icons-material/YouTube';
+import Makeupvideo from './video/makeupvideo.mp4';
+import zIndex from '@mui/material/styles/zIndex'
 
 function Home() {
   return (
     <div className='home'>
+      <div className="home__container_H1" ><h1>#BRAND</h1></div>
     <div className="home__container">
-      <img className='home_image' 
-      src="https://i.ibb.co/Vw33VSk/igor-rand-3-J4-Hyv-V9bw-Y-unsplash-2.jpg " 
-   />
-       <h1 className='home_image_text'>Beauty Starts Here 
+ 
+
+   <video className='home_image' autoPlay muted loop
+
+  >
+    <source src={Makeupvideo} type="video/mp4" />
+
+   </video>
+       <h1 className='home_image_text'>BRAND BEAUTY 
+       <div className='home_image_text_h5'><h5> All Your Favorite Brands in One Place</h5><button className='home_image_text_h5_button'>SHOP NOW</button></div>
        </h1>
 
    
