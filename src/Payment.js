@@ -3,9 +3,34 @@ import './Payment.css'
 import { useStateValue } from './StateProvider';
 import CheckoutProduct from './CheckoutProduct';
 import { Link } from 'react-router-dom';
+import { useElements } from '@stripe/react-stripe-js';
+import { CardElement, useStripe } from '@stripe/react-stripe-js';
+import { getBasketTotal } from './reducer';
+import { useState } from 'react';
+import CurrencyFormat from 'react-currency-format';
 
 function Payment() {
 const [{basket, user}, dispatch] = useStateValue();
+const stripe = useStripe()
+const elements = useElements()
+
+const [error, setError] = useState(null)
+const [disabled, setDisabled] = useState(true)
+
+const handleSubmit = e => {
+console.log("hi")
+}
+
+const handleChange = e => {
+    //we are going to listen for changes in the card element 
+    //and display any errors as the customer types their card details 
+    setDisabled(e.empty);
+    //this line of code means: if the event is empy, disable the button
+    //else if there is an error, show the error
+    //otherwise show nothing 
+    setError(e.error ? e.error.message : "");
+}
+
 
 
   return (
@@ -61,6 +86,23 @@ const [{basket, user}, dispatch] = useStateValue();
                 </div>
                 <div className="payment__details">
                     {/* STRIPE LOGIC IS HERE */}
+                    <form onSubmit={handleSubmit}>
+                        <CardElement onChange={handleChange}/>
+                        <div className='payment__priceContainer'>
+                        <CurrencyFormat
+                                renderText={(value) => (
+                                <h3>Order Total : {value}</h3>    
+
+                                )}
+                                decimalScale={2}
+                                value= { getBasketTotal(basket)}
+                                displayType={"text"}
+                                thousandSeparator={true}
+                                prefix={"$"}
+                            />
+
+                        </div>
+                    </form>
                 </div>
             </div>
 

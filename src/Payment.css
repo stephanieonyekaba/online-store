@@ -56,3 +56,7 @@ h2 {
     color:rgba(168,140,116,255);
 }
 
+.payment__details {
+    flex:0.6
+}
+
