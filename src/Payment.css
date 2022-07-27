@@ -1,0 +1,58 @@
+.payment{
+    display: flex;
+    justify-content: center;
+    background-color:rgba(234,237,237);
+    height: 800px;
+    overflow: scroll;
+    padding-bottom: 0px;
+
+
+}
+
+.payment__container {
+   width: 70%;
+   height: fit-content;
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+
+
+}
+
+.payment__container > h1  {
+    text-align: center;
+    padding: 10px;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    background-color:rgba(234,237,237);
+}
+
+.payment__container > h1 a {
+    text-decoration: none;
+}
+
+
+.payment__section {
+    display: flex;
+    padding: 20px;
+    margin: 0, 20px;
+    border-bottom: 1px solid lightgray;
+  
+
+}
+.payment__title {
+    flex: 0.6;
+}
+
+.payment__address, .payment__items{
+    flex: 0.4;
+}
+
+h2 {
+    font-size: 40px;
+    font-family:'Raleway', sans-serif;
+    color:rgba(168,140,116,255);
+}
+

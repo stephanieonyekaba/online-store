@@ -2,8 +2,10 @@
     display: flex;
     padding: 20px;
     background-color: white;
-    height: max-content;
     height: 650px;
+    overflow-y: scroll;
+
+
 }
 
 .checkout__title {

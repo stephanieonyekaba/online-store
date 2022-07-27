@@ -7,12 +7,14 @@ import Footer from './Footer';
 import { auth } from './firebase'
 import { useStateValue } from './StateProvider';
 import { useEffect } from 'react';
+import Payment from './Payment';
 import {
   BrowserRouter,
   Routes,
   Route,
   Link,
 } from "react-router-dom";
+
 
 
 function App() {
@@ -84,7 +86,13 @@ useEffect(()=> {
       }/>
 
 
-
+    <Route exact path="/payment" element={
+        <>
+        <Header/>
+        <Payment />
+        <Footer />
+        </>
+      }/>
 
 
 
