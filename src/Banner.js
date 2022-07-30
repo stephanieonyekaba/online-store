@@ -12,7 +12,7 @@ function Banner({description, title, image}) {
             </p>
             </div>
 
-        <button><span class="txt__banner">Shop Now</span></button>
+        <button className='banner__button'><span class="txt__banner">Shop Now</span></button>
       
     </div>
 

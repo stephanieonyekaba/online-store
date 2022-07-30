@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Payment.css'
 import { useStateValue } from './StateProvider';
 import CheckoutProduct from './CheckoutProduct';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useElements } from '@stripe/react-stripe-js';
 import { CardElement, useStripe } from '@stripe/react-stripe-js';
 import { getBasketTotal } from './reducer';
 import { useState } from 'react';
 import CurrencyFormat from 'react-currency-format';
+import { useNavigate } from "react-router-dom";
+import axios from './axios';
+import { db } from './firebase';
 
 function Payment() {
 const [{basket, user}, dispatch] = useStateValue();
@@ -16,9 +19,70 @@ const elements = useElements()
 
 const [error, setError] = useState(null)
 const [disabled, setDisabled] = useState(true)
+const [clientSecret, setClientSecret] = useState(true)
 
-const handleSubmit = e => {
-console.log("hi")
+const navigate = useNavigate();
+
+useEffect(() => {
+    //we use this function to generate the stripe secret code that allows us to charge the customer 
+    //but we also need it to update depending on how much we are actually charging the customer 
+    const getClientSecret = async () => {
+        //axios allows us to make api calls to our backend 
+        const response = await axios ({
+            method: 'post',
+            //stripes expect the total in a currency'ssubunit (ex dollars should be cents)
+            //this is why we multiply by 100 to overcome this 
+            url: `/payments/create?total=${getBasketTotal(basket) * 100}`
+        });
+        setClientSecret(response.data.clientSecret)
+    }
+
+getClientSecret(); 
+
+}, [basket])
+
+console.log('THE SECRET IS >>>>>>', clientSecret)
+console.log("THIS IS THE USERRRR", user)
+
+const [succeeded, setSucceeded] = useState(false)
+const [processing, setProcessing] = useState("")
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    //this makes it so that when you hit the submit payment button it prevents 
+    //you from clicking it again 
+    setProcessing(true)
+
+    const payload = await stripe.confirmCardPayment(clientSecret, 
+    {payment_method: {
+        card: elements.getElement(CardElement)
+        }
+    }).then(({paymentIntent}) => {
+            //the payment intent is just the confimration after stripe processes the payment 
+
+            db
+            .collection('users')
+            .doc(user?.uid)
+            .collection('orders')
+            .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
+                
+            
+
+
+            setSucceeded(true);
+            setError(null);
+            setProcessing(false)
+
+            navigate('/orders')
+            dispatch({
+                type: 'EMPTY_BASKET', 
+            })
+    })
 }
 
 const handleChange = e => {
@@ -100,8 +164,13 @@ const handleChange = e => {
                                 thousandSeparator={true}
                                 prefix={"$"}
                             />
-
+                            <button className="buy__button" disabled={processing || disabled || succeeded}>
+                                <span>{processing ? <p>Processing</p> : "Buy Now"} </span>
+                            </button>
                         </div>
+                        {/* error handling  */}
+
+                        {error && <div>{error}</div>}
                     </form>
                 </div>
             </div>

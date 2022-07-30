@@ -43,7 +43,7 @@ const addToBasket = () => {
         </div>
         </div>
         <img src={image} alt="" />
-        <button onClick={addToBasket}><span class="txt">ADD TO BAG</span></button>
+        <button className="product__button" onClick={addToBasket}><span class="txt">ADD TO BAG</span></button>
       
     </div>
   )

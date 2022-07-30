@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 import Payment from './Payment';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import Orders from './Orders';
 import {
   BrowserRouter,
   Routes,
@@ -97,6 +98,17 @@ useEffect(()=> {
         <Footer />
         </>
       }/>
+
+    <Route exact path="/orders" element={
+        <>
+          <Header/>
+          <Orders/> 
+          {/* <Footer /> */}
+        </>
+      }/>
+
+
+      
 
 
 
